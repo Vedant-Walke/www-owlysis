@@ -26,7 +26,7 @@ const Header = () => {
             className="border sticky top-0 left-0 right-0 mt-6 min-h-12 flex items-center justify-between"
         >
             <div className="flex items-center">
-                <a href="/" className="aspect-square h-12 flex items-center justify-center">
+                <a href="/" className="aspect-square h-12 flex items-center justify-center border-r md:border-r-0">
                     <img
                         src={assets.logo.icon}
                         alt="Owlysis Logo"
@@ -37,7 +37,7 @@ const Header = () => {
                     <a
                         key={value.label}
                         href={value.href}
-                        className="flex h-12 items-center justify-center px-3 border border-y-transparent border-r-transparent last:border-r-border hover:border-primary transition"
+                        className="hidden md:flex h-12 items-center justify-center px-3 border border-y-transparent border-r-transparent last:border-r-border hover:border-primary transition"
                     >
                         {value.label}
                     </a>
