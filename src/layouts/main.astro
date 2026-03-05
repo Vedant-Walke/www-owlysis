@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+
+import RootLayout from "@/layouts/main.astro"
+
 const { content } = Astro.props;
 ---
 
@@ -11,7 +14,10 @@ const { content } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<title>{content.title}</title>
 	</head>
-	<body>
-		<slot />
+	<body
+	>
+		<RootLayout>
+			<slot />
+		</RootLayout>
 	</body>
 </html>
