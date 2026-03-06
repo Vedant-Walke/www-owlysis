@@ -3,7 +3,7 @@ import { HeroOne } from '@/components/blocks/hero-one';
 import '../styles/global.css';
 // Component Imports
 import {Header} from "@/components/shared/header"
-
+import { HeroSection, FeatureSection, StatsBand} from "@/components/sections/HeroSection"
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -18,14 +18,12 @@ import {Header} from "@/components/shared/header"
 		<title>Astro + TailwindCSS</title>
 	</head>
 
-	<body>
+	<body  class="bg-background text-foreground antialiased min-w-[1280px]">
 		<Header />
-		<main
-			class="flex flex-col gap-3"
-		>
-			<HeroOne
-				
-			/>
+		<main class="flex flex-col gap-3">
+			<HeroSection    client:load />
+      		<FeatureSection client:load />
+      		<StatsBand      client:load />
 		</main>
 	</body>
 </html>
