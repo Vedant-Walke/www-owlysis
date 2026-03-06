@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro with Tailwind
 
 ```sh
@@ -11,3 +12,6 @@ bun create astro@latest -- --template with-tailwindcss
 Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
 
 For complete setup instructions, please see our [Tailwind Styling Guide](https://docs.astro.build/en/guides/styling/#tailwind).
+=======
+# www-owlysis
+>>>>>>> 875ec6f145f7485a654bcc82daba9f510138fe56
