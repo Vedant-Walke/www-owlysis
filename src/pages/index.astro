@@ -3,7 +3,8 @@ import { HeroOne } from '@/components/blocks/hero-one';
 import '../styles/global.css';
 // Component Imports
 import {Header} from "@/components/shared/header"
-import { HeroSection, FeatureSection, StatsBand} from "@/components/sections/HeroSection"
+import { HeroSection, FeatureSection ,CalendarSection,ToolsSection,DemoSection,  SiteFooter } from "@/components/sections/HeroSection"
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -23,7 +24,10 @@ import { HeroSection, FeatureSection, StatsBand} from "@/components/sections/Her
 		<main class="flex flex-col gap-3">
 			<HeroSection    client:load />
       		<FeatureSection client:load />
-      		<StatsBand      client:load />
+			<CalendarSection client:load />
+			<ToolsSection client:load />
+			<DemoSection client:load />  
 		</main>
+		<SiteFooter client:load /> 
 	</body>
 </html>
