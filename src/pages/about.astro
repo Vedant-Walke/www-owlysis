@@ -1,0 +1,137 @@
+---
+import '../styles/global.css';
+import { Header } from "@/components/shared/header";
+import { SiteFooter } from "@/components/sections/HeroSection";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>About Owlysis | AI Coding Assessments</title>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-background text-foreground antialiased min-w-[1280px]">
+		<Header />
+		<main>
+			<!-- Hero Section -->
+			<section class="border-b border-border">
+				<div class="grid grid-cols-2 px-20 pt-32 pb-24">
+					<h1 class="text-[88px] leading-[1.05] tracking-[-0.01em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">
+						Empowering the<br />
+						<em class="text-blue-600" style="font-style: italic">next generation</em><br />
+						of developers
+					</h1>
+					<div class="pl-20 flex flex-col justify-end gap-10 pb-4">
+						<p class="text-[19px] leading-[1.6] text-muted-foreground font-light max-w-[480px]">
+							Owlysis is redefining how companies evaluate technical talent.
+							Our AI-driven platform provides comprehensive coding assessments
+							that go beyond simple syntax, evaluating true problem-solving capabilities.
+						</p>
+						<div class="flex items-center gap-6">
+							<div class="flex flex-col">
+								<span class="text-[24px] font-medium">50+</span>
+								<span class="text-[11px] uppercase tracking-wider text-muted-foreground font-mono">Languages</span>
+							</div>
+							<div class="w-px h-10 bg-border"></div>
+							<div class="flex flex-col">
+								<span class="text-[24px] font-medium">10k+</span>
+								<span class="text-[11px] uppercase tracking-wider text-muted-foreground font-mono">Assessments</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Mission Section -->
+			<section class="border-b border-border bg-[#F9F9F7]">
+				<div class="grid grid-cols-2 px-20 py-28 border-b border-border">
+					<div class="flex flex-col gap-8">
+						<div class="w-10 h-10 bg-blue-600 flex items-center justify-center text-white font-mono text-sm">M</div>
+						<h2 class="text-[56px] leading-[1.05] tracking-[-0.02em] font-normal max-w-[500px]" style="font-family: 'Instrument Serif', Georgia, serif;">
+							Our mission is to<br />make coding tests<br /><em class="text-blue-600" style="font-style: italic">actually useful</em>.
+						</h2>
+					</div>
+					<div class="pl-20 flex flex-col gap-10">
+						<div class="space-y-6">
+							<p class="text-[17px] leading-[1.7] text-muted-foreground font-light max-w-[520px]">
+								We believe that every developer deserves a fair chance to showcase their skills. 
+								Traditional coding tests are often disconnected from real-world work. 
+								Owlysis bridges that gap with AI agents that understand context, logic, and efficiency.
+							</p>
+							<p class="text-[17px] leading-[1.7] text-muted-foreground font-light max-w-[520px]">
+								Our platform supports assessments in over 50 programming languages, including 
+								<span class="text-foreground font-medium">C, C++, Python, Java, JavaScript, and Rust</span>. 
+								We ensure that no matter the stack, your candidates can prove their worth in the language they know best.
+							</p>
+						</div>
+						<a href="/contact-us" class="inline-flex items-center gap-2 text-[14px] font-medium hover:gap-3 transition-all underline underline-offset-8 decoration-blue-600/30">
+							Learn more about our technology
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+								<path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-3">
+					{[
+						["01", "AI-Powered Analysis", "Our proprietary AI agents analyze not just if the code runs, but how it's structured and optimized."],
+						["02", "Instant Feedback", "Candidates receive immediate, meaningful feedback on their submissions, improving the experience for everyone."],
+						["03", "Multilingual Support", "Full support for 50+ languages, from low-level systems programming to high-level scripting."]
+					].map(([num, title, body]) => (
+						<div class="px-20 py-16 border-r border-border last:border-r-0 flex flex-col gap-4">
+							<span class="text-[11px] font-mono text-muted-foreground tracking-widest">{num}</span>
+							<h3 class="text-[20px] font-medium tracking-tight">{title}</h3>
+							<p class="text-[14px] leading-[1.6] text-muted-foreground font-light">{body}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Team/Location Section -->
+			<section class="border-b border-border">
+				<div class="grid grid-cols-2 px-20 py-24 items-center">
+					<div class="flex flex-col gap-6">
+						<h2 class="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">
+							Based in Pune,<br />built for the world.
+						</h2>
+						<p class="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
+							We are a small, dedicated team of developers and AI researchers working from Pune, India. 
+							Our goal is to build the most robust technical assessment infrastructure on the planet.
+						</p>
+					</div>
+					<div class="pl-20">
+						<div class="aspect-video bg-muted rounded-sm overflow-hidden relative group">
+							<div class="absolute inset-0 bg-blue-600/5 group-hover:bg-transparent transition-colors duration-500"></div>
+							<div class="absolute inset-0 flex items-center justify-center">
+								<span class="text-[14px] font-mono text-muted-foreground">Office visualization</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Final CTA -->
+			<section class="px-20 py-32 text-center">
+				<h2 class="text-[64px] leading-[1.1] tracking-[-0.01em] font-normal mb-10" style="font-family: 'Instrument Serif', Georgia, serif;">
+					Ready to hire better?
+				</h2>
+				<div class="flex items-center justify-center gap-4">
+					<a href="https://app.owlysis.com" class="px-10 py-4 bg-foreground text-background text-[15px] font-medium hover:opacity-90 transition-opacity">
+						Get started for free
+					</a>
+					<a href="/contact-us" class="px-10 py-4 border border-border text-[15px] font-medium hover:border-foreground transition-colors">
+						Contact Sales
+					</a>
+				</div>
+			</section>
+
+		</main>
+		<SiteFooter client:load /> 
+	</body>
+</html>

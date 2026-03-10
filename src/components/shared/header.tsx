@@ -22,9 +22,7 @@ const Header = () => {
     ]
 
     return (
-        <header
-            className="border sticky top-0 left-0 right-0 mt-6 min-h-12 flex items-center justify-between"
-        >
+        <header className="border top-0 left-0 right-0 mt-6 min-h-12 w-320 flex items-center justify-between">
             <div className="flex items-center">
                 <a href="/" className="aspect-square h-12 flex items-center justify-center border-r md:border-r-0">
                     <img
