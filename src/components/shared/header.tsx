@@ -42,19 +42,19 @@ const Header = () => {
                 ))}
             </div>
             <div className="flex items-center">
-                    <a
-                        href="/contact-us"
-                        className="flex h-12 items-center justify-center px-3 border border-y-transparent border-r-transparent last:border-r-border hover:border-primary transition"
-                    >
-                        Contact us
-                    </a>
-                    <a
-                        target="_blank"
-                        href="https://app.owlysis.com"
-                        className="flex h-12 items-center justify-center px-3 bg-primary text-primary-foreground"
-                    >
-                        Login
-                    </a>
+                <a
+                    href="/contact"
+                    className="flex h-12 items-center justify-center px-3 border border-y-transparent border-r-transparent last:border-r-border hover:border-primary transition"
+                >
+                    Contact us
+                </a>
+                <a
+                    target="_blank"
+                    href="https://app.owlysis.com"
+                    className="flex h-12 items-center justify-center px-3 bg-primary text-primary-foreground"
+                >
+                    Login
+                </a>
             </div>
         </header>
     )

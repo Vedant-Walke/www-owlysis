@@ -9,7 +9,7 @@ export const HeroSection = () => (
     {/* Headline + sub */}
     <div className="grid grid-cols-2 px-20 pt-20 pb-14 border-b border-border">
       <h1 className="text-[88px] leading-[1.05] tracking-[-0.02em] font-normal"
-          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
         The last<br />
         <em className="text-blue-600" style={{ fontStyle: "italic" }}>agent platform</em><br />
         you'll ever need
@@ -22,32 +22,32 @@ export const HeroSection = () => (
         </p>
         <div className="flex items-center gap-3">
           <a href="https://app.owlysis.com"
-             className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
             Get started free
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
           <a href="/demo"
-             className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
             Watch demo
           </a>
         </div>
       </div>
     </div>
 
-<div className=" p-10 border-2">
-    {/* Dashboard visual */}
-    <div className="relative overflow-hidden" style={{ height: 600 }}>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
-      <img
-        src="/images/owlysis-dashboard.png"
-        alt="Owlysis dashboard"
-        className="w-full h-full object-cover object-top"
-      />
+    <div className=" p-10 border-2">
+      {/* Dashboard visual */}
+      <div className="relative overflow-hidden" style={{ height: 600 }}>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
+        <img
+          src="/images/owlysis-dashboard.png"
+          alt="Owlysis dashboard"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
     </div>
-</div>
   </section>
 )
 
@@ -58,60 +58,60 @@ export const FeatureSection = () => (
 
     {/* Header row */}
     <div className="bg-blue-50 p-10 mt-18">
-    <div className="grid grid-cols-2 border-b border-border">
-      <div className="px-20 py-16 border-r border-border flex flex-col gap-6">
-        <div className="w-9 h-9 bg-blue-600 flex items-center justify-center font-mono text-sm font-medium text-white">
-          M
-        </div>
-        <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
+      <div className="grid grid-cols-2 border-b border-border">
+        <div className="px-20 py-16 border-r border-border flex flex-col gap-6">
+          <div className="w-9 h-9 bg-blue-600 flex items-center justify-center font-mono text-sm font-medium text-white">
+            M
+          </div>
+          <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
             style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          Making teamwork<br />slightly less painful
-        </h2>
-      </div>
-      <div className="px-20 py-16 flex items-end">
-        <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
-          No more "who edited this?" panic. Just smooth, drama-free workflows that
-          actually help your team get stuff done—for once. Owlysis keeps everyone in
-          sync without the overhead.
-        </p>
-      </div>
-    </div>
-
-    {/* Feature visual */}
-    <div className="relative overflow-hidden border-b border-border" style={{ height: 550 }}>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
-      <img
-        src="/images/ow-assesment.png"
-        alt="Owlysis Assesment"
-        className="w-full h-full object-cover object-top"
-      />
-    </div>
-
-    {/* Feature cards */}
-    <div className="grid grid-cols-3">
-      {[
-        ["01", "Take Coding Assessments",
-         "Students can select from multiple programming tests based on difficulty level. Each assessment includes a set of coding questions designed to evaluate problem-solving and programming skills."],
-        ["02", "Write Code & See Output Instantly",
-         "Students can write and run their code directly in the platform. The system compiles the code and shows the output instantly, helping them verify their solution in real time."],
-        ["03", "Track Performance & Results",
-         "After completing the test, students can view their results, marks, and performance for each assessment. This helps them understand their strengths and improve their coding skills."],
-      ].map(([num, title, body], i) => (
-        <div key={num} className={`px-20 py-14 flex flex-col gap-4 ${i < 2 ? "border-r border-border" : ""}`}>
-          <span className="text-[11px] font-mono text-muted-foreground tracking-[0.1em]">{num}</span>
-          <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">{title}</h3>
-          <p className="text-[14px] leading-[1.7] text-muted-foreground font-light">{body}</p>
+            Making teamwork<br />slightly less painful
+          </h2>
         </div>
-      ))}
-    </div>
+        <div className="px-20 py-16 flex items-end">
+          <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
+            No more "who edited this?" panic. Just smooth, drama-free workflows that
+            actually help your team get stuff done—for once. Owlysis keeps everyone in
+            sync without the overhead.
+          </p>
+        </div>
+      </div>
+
+      {/* Feature visual */}
+      <div className="relative overflow-hidden border-b border-border" style={{ height: 550 }}>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
+        <img
+          src="/images/ow-assesment.png"
+          alt="Owlysis Assesment"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+
+      {/* Feature cards */}
+      <div className="grid grid-cols-3">
+        {[
+          ["01", "Take Coding Assessments",
+            "Students can select from multiple programming tests based on difficulty level. Each assessment includes a set of coding questions designed to evaluate problem-solving and programming skills."],
+          ["02", "Write Code & See Output Instantly",
+            "Students can write and run their code directly in the platform. The system compiles the code and shows the output instantly, helping them verify their solution in real time."],
+          ["03", "Track Performance & Results",
+            "After completing the test, students can view their results, marks, and performance for each assessment. This helps them understand their strengths and improve their coding skills."],
+        ].map(([num, title, body], i) => (
+          <div key={num} className={`px-20 py-14 flex flex-col gap-4 ${i < 2 ? "border-r border-border" : ""}`}>
+            <span className="text-[11px] font-mono text-muted-foreground tracking-[0.1em]">{num}</span>
+            <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">{title}</h3>
+            <p className="text-[14px] leading-[1.7] text-muted-foreground font-light">{body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 )
 export const FooterCTA = () => (
   <div className="grid grid-cols-2 px-20 py-24 border-b border-border items-center">
     <h2 className="text-[68px] leading-[1.08] tracking-[-0.02em] font-normal"
-        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+      style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
       Ready to deploy<br />
       your <em className="text-blue-600" style={{ fontStyle: "italic" }}>first agent</em>?
     </h2>
@@ -121,14 +121,14 @@ export const FooterCTA = () => (
       </p>
       <div className="flex items-center gap-3">
         <a href="https://app.owlysis.com"
-           className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
           Start building free
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
-        <a href="/contact-us"
-           className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
+        <a href="/contact"
+          className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
           Talk to sales
         </a>
       </div>
@@ -146,7 +146,7 @@ export const CalendarSection = () => (
           C
         </div>
         <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
-            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
           Calendar that<br />doesn't flake
         </h2>
       </div>
@@ -159,7 +159,7 @@ export const CalendarSection = () => (
     </div>
 
     {/* Calendar visual */}
-    <div className="relative overflow-hidden border-b border-border" style={{ height: 900, width:1200}}>
+    <div className="relative overflow-hidden border-b border-border" style={{ height: 900, width: 1200 }}>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
       <img
@@ -177,7 +177,7 @@ export const ToolsSection = () => (
     {/* Header row */}
     <div className="grid grid-cols-2 px-20 pt-16 pb-12 border-b border-border">
       <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal"
-          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
         Tools that actually<br />pull their weight
       </h2>
       <div className="pl-20 flex items-end pb-1">
@@ -286,7 +286,7 @@ export const ToolsSection = () => (
               <div className="flex-1 overflow-hidden">
                 {/* Table header */}
                 <div className="grid px-5 py-2 border-b border-[#f0f0f0] text-[9px] font-mono text-[#aaa] uppercase tracking-wider"
-                     style={{ gridTemplateColumns: "3fr 80px 2fr 50px 60px" }}>
+                  style={{ gridTemplateColumns: "3fr 80px 2fr 50px 60px" }}>
                   <span>Question</span>
                   <span>Language</span>
                   <span>Section</span>
@@ -296,17 +296,17 @@ export const ToolsSection = () => (
 
                 {[
                   ["Sort a List of Numbers in Ascending or Descending Order", "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
-                  ["Store Multiple Student Names in a List",                   "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
-                  ["Convert a String to a List of Characters",                 "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
-                  ["Modify a List by Replacing Specific Values",               "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
-                  ["Create a List of Numbers from 1 to N",                     "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
-                  ["Primal Check: System Security Clearance",                  "C",      "C Programming",                                           "5"],
-                  ["PRIME_CHECK: Security Appliance Latency Filter",           "C",      "C Programming",                                           "5"],
-                  ["Extract Middle Three Characters from a String",            "Python", "Control Statements",                                      "5"],
+                  ["Store Multiple Student Names in a List", "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
+                  ["Convert a String to a List of Characters", "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
+                  ["Modify a List by Replacing Specific Values", "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
+                  ["Create a List of Numbers from 1 to N", "Python", "Chap 3: Lists, functions, tuples and dictionaries, Sets", "5"],
+                  ["Primal Check: System Security Clearance", "C", "C Programming", "5"],
+                  ["PRIME_CHECK: Security Appliance Latency Filter", "C", "C Programming", "5"],
+                  ["Extract Middle Three Characters from a String", "Python", "Control Statements", "5"],
                 ].map(([q, lang, section, marks], i) => (
                   <div key={i}
-                       className="grid items-center px-5 py-2 border-b border-[#f9f9f9] hover:bg-[#fafafa]"
-                       style={{ gridTemplateColumns: "3fr 80px 2fr 50px 60px" }}>
+                    className="grid items-center px-5 py-2 border-b border-[#f9f9f9] hover:bg-[#fafafa]"
+                    style={{ gridTemplateColumns: "3fr 80px 2fr 50px 60px" }}>
                     <span className="text-[11px] text-[#111] truncate pr-3">{q}</span>
                     <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded w-fit
                       ${lang === "Python" ? "bg-[#f3f4f6] text-[#555]" : "bg-[#f3f4f6] text-[#555]"}`}>
@@ -426,17 +426,17 @@ export const ToolsSection = () => (
           {/* Keyboard visual */}
           <div className="border border-border p-4 flex flex-col gap-1.5 bg-slate-50">
             {[
-              ["esc","F1","F2","F3","F4","F5"],
-              ["`","1","2","3","4","5"],
-              ["tab","Q","W","E","R","T"],
-              ["","A","S","D","F",""],
-              ["","Z","X","C","V","B"],
-              ["fn","↑","⌥","⌘","",""],
+              ["esc", "F1", "F2", "F3", "F4", "F5"],
+              ["`", "1", "2", "3", "4", "5"],
+              ["tab", "Q", "W", "E", "R", "T"],
+              ["", "A", "S", "D", "F", ""],
+              ["", "Z", "X", "C", "V", "B"],
+              ["fn", "↑", "⌥", "⌘", "", ""],
             ].map((row, ri) => (
               <div key={ri} className="flex gap-1">
                 {row.map((k, ki) => (
                   <div key={ki}
-                       className={`h-7 flex items-center justify-center border border-border text-[9px] font-mono rounded-sm bg-white
+                    className={`h-7 flex items-center justify-center border border-border text-[9px] font-mono rounded-sm bg-white
                          ${k === "esc" ? "w-10" : k === "tab" || k === "fn" ? "w-9" : "w-7"}
                          ${!k ? "opacity-0" : ""}`}>
                     {k}
@@ -484,7 +484,7 @@ export const ToolsSection = () => (
               { bg: "#FF4500", emoji: "🤖" },
             ].map((item, i) => (
               <div key={i}
-                   className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-lg bg-white">
+                className="w-10 h-10 rounded-xl border border-border flex items-center justify-center text-lg bg-white">
                 {item.emoji}
               </div>
             ))}
@@ -513,7 +513,7 @@ export const DemoSection = () => {
 
         {/* Main text */}
         <p className="text-center text-[22px] leading-[1.6] text-[#111] max-w-[780px] px-8"
-           style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
           Experience Owlysis in action — discover how our platform helps you move faster,
           work smarter, and stay ahead.
         </p>
@@ -521,8 +521,8 @@ export const DemoSection = () => {
         {/* Scrolling logos marquee */}
         <div className="mt-14 w-full overflow-hidden">
           <div className="flex gap-20 items-center whitespace-nowrap"
-               style={{ animation: "marquee 28s linear infinite" }}>
-            {["Dropbox","talkdesk","checkout.com","talkdesk","checkout.com","Dropbox","talkdesk","checkout.com","talkdesk","checkout.com"].map((name, i) => (
+            style={{ animation: "marquee 28s linear infinite" }}>
+            {["Dropbox", "talkdesk", "checkout.com", "talkdesk", "checkout.com", "Dropbox", "talkdesk", "checkout.com", "talkdesk", "checkout.com"].map((name, i) => (
               <span key={i} className="text-[15px] font-medium text-[#333] tracking-tight flex-shrink-0 flex items-center gap-2">
                 {name === "Dropbox" && <><span className="text-blue-500">⬡</span> Dropbox</>}
                 {name === "talkdesk" && <span className="font-mono">talkd<span className="text-blue-400">e</span>sk</span>}
@@ -564,7 +564,7 @@ export const DemoSection = () => {
             </button>
 
             <h2 className="text-[26px] font-normal tracking-[-0.02em]"
-                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+              style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
               Book a demo with our team
             </h2>
 
@@ -639,7 +639,7 @@ export const SiteFooter = () => {
       href: "https://twitter.com",
       icon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
         </svg>
       ),
     },
@@ -648,7 +648,7 @@ export const SiteFooter = () => {
       href: "https://github.com",
       icon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
         </svg>
       ),
     },
@@ -657,7 +657,7 @@ export const SiteFooter = () => {
       href: "https://linkedin.com",
       icon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       ),
     },
@@ -676,10 +676,10 @@ export const SiteFooter = () => {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-foreground flex items-center justify-center flex-shrink-0">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <rect x="1" y="1" width="6" height="6" fill="#F7F6F2"/>
-                <rect x="9" y="1" width="6" height="6" fill="#F7F6F2"/>
-                <rect x="1" y="9" width="6" height="6" fill="#F7F6F2" opacity="0.4"/>
-                <rect x="9" y="9" width="6" height="6" fill="#F7F6F2" opacity="0.7"/>
+                <rect x="1" y="1" width="6" height="6" fill="#F7F6F2" />
+                <rect x="9" y="1" width="6" height="6" fill="#F7F6F2" />
+                <rect x="1" y="9" width="6" height="6" fill="#F7F6F2" opacity="0.4" />
+                <rect x="9" y="9" width="6" height="6" fill="#F7F6F2" opacity="0.7" />
               </svg>
             </div>
             <span className="text-[16px] font-semibold tracking-[-0.02em]">Owlysis</span>
