@@ -1,0 +1,126 @@
+---
+import '../styles/global.css';
+import { Header } from "@/components/shared/header";
+import { SiteFooter } from "@/components/sections/HeroSection";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Careers | Join Owlysis</title>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-background text-foreground antialiased min-w-[1280px]">
+		<Header />
+		<main>
+			<!-- Hero Section -->
+			<section class="border-b border-border">
+				<div class="grid grid-cols-2 px-20 pt-32 pb-24">
+					<h1 class="text-[88px] leading-[1.05] tracking-[-0.01em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">
+						Join the team building the<br />
+						<em class="text-blue-600" style="font-style: italic">future of hiring</em>
+					</h1>
+					<div class="pl-20 flex flex-col justify-end gap-10 pb-4">
+						<p class="text-[19px] leading-[1.6] text-muted-foreground font-light max-w-[480px]">
+							We're a mission-driven team dedicated to making technical assessments fair, objective, and insightful using the power of AI.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Values Section -->
+			<section class="border-b border-border bg-[#F9F9F7]">
+				<div class="px-20 py-24">
+					<div class="flex flex-col gap-16">
+						<div class="flex flex-col gap-6">
+							<span class="text-[11px] font-mono text-blue-600 uppercase tracking-widest">Our Culture</span>
+							<h2 class="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">What we stand for</h2>
+						</div>
+						
+						<div class="grid grid-cols-3 gap-12">
+							{[
+								["Objectivity", "We believe hiring should be based on merit. Our technology is built to remove bias and surface true talent."],
+								["Innovation", "We're pushed by the 'what if'. We experiment with cutting-edge AI to solve the hardest problems in HR tech."],
+								["Experience", "We prioritize the developer experience. Every assessment we build is designed to be respectful and rewarding."]
+							].map(([title, desc]) => (
+								<div class="flex flex-col gap-4 border-l border-border pl-8">
+									<h3 class="text-[24px] font-medium">{title}</h3>
+									<p class="text-[15px] leading-[1.7] text-muted-foreground font-light">{desc}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Open Positions -->
+			<section class="border-b border-border py-24">
+				<div class="px-20">
+					<div class="flex flex-col gap-12">
+						<h2 class="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">Open Roles</h2>
+						
+						<div class="flex flex-col border-t border-border">
+							{[
+								["Senior AI Engineer", "Engineering", "Remote"],
+								["Frontend Developer", "Engineering", "Remote"],
+								["Product Designer", "Design", "Remote"],
+								["Technical Content Writer", "Marketing", "Remote"]
+							].map(([role, dept, loc]) => (
+								<div class="grid grid-cols-[1fr_200px_200px_150px] items-center py-8 border-b border-border group hover:bg-[#fafafa] transition-colors">
+									<span class="text-[22px] font-medium group-hover:text-blue-600 transition-colors pl-4">{role}</span>
+									<span class="text-[14px] text-muted-foreground font-light">{dept}</span>
+									<span class="text-[14px] text-muted-foreground font-light">{loc}</span>
+									<a href="/contact" class="text-[13px] font-medium underline underline-offset-4 decoration-blue-600/30 hover:decoration-blue-600">Apply Now →</a>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Benefits Section -->
+			<section class="border-b border-border bg-[#0D0D0B] text-white py-24">
+				<div class="px-20">
+					<div class="grid grid-cols-2 gap-20">
+						<div class="flex flex-col gap-8">
+							<h2 class="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">Perks & Benefits</h2>
+							<p class="text-[17px] text-white/60 font-light max-w-[400px]">We take care of our team so they can focus on doing their best work.</p>
+						</div>
+						<div class="grid grid-cols-2 gap-10">
+							{[
+								["Work Anywhere", "Fully remote culture with flexible hours."],
+								["Learning Budget", "Annual stipend for courses, books, and conferences."],
+								["Health & Wellness", "Comprehensive insurance and wellness benefits."],
+								["Modern Stack", "Work with the latest AI and web technologies."]
+							].map(([title, desc]) => (
+								<div class="flex flex-col gap-2">
+									<h4 class="text-[18px] font-medium">{title}</h4>
+									<p class="text-[14px] text-white/40 font-light">{desc}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Final CTA -->
+			<section class="px-20 py-32 text-center">
+				<h2 class="text-[64px] leading-[1.1] tracking-[-0.01em] font-normal mb-8" style="font-family: 'Instrument Serif', Georgia, serif;">
+					Don't see a fit?
+				</h2>
+				<p class="text-[19px] text-muted-foreground font-light mb-12 max-w-[600px] mx-auto">
+					We're always looking for talented people who are passionate about the future of tech. Send us a note and let's chat.
+				</p>
+				<a href="mailto:careers@owlysis.com" class="px-12 py-5 bg-foreground text-background text-[15px] font-medium hover:bg-blue-600 transition-colors uppercase tracking-widest font-mono">
+					Get in touch
+				</a>
+			</section>
+		</main>
+		<SiteFooter client:load /> 
+	</body>
+</html>

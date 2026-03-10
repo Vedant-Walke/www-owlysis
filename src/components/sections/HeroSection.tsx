@@ -670,7 +670,7 @@ export const SiteFooter = () => {
       <div className="grid grid-cols-4">
 
         {/* Brand column */}
-        <div className="px-20 py-16 border-r border-border flex flex-col gap-8">
+        <div className="px-12 py-16 border-r border-border flex flex-col gap-8">
 
           {/* Logo + name */}
           <div className="flex items-center gap-3">
@@ -695,13 +695,13 @@ export const SiteFooter = () => {
             <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-[0.1em]">
               Get product updates
             </span>
-            <div className="flex">
+            <div className="flex flex-col gap-3">
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="flex-1 px-3 py-2.5 text-[12px] border border-border bg-transparent placeholder-muted-foreground/50 outline-none focus:border-foreground transition-colors"
+                className="w-full px-3 py-2.5 text-[12px] border border-border bg-[#F7F6F2] placeholder-muted-foreground/50 outline-none focus:border-foreground transition-colors"
               />
-              <button className="px-4 py-2.5 bg-foreground text-background text-[12px] font-medium border border-foreground hover:opacity-80 transition-opacity whitespace-nowrap">
+              <button className="w-full py-2.5 bg-foreground text-background text-[12px] font-medium border border-foreground hover:opacity-80 transition-opacity whitespace-nowrap">
                 Subscribe
               </button>
             </div>

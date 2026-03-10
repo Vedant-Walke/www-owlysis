@@ -1,0 +1,73 @@
+---
+import '../../styles/global.css';
+import { Header } from "@/components/shared/header";
+import { SiteFooter } from "@/components/sections/HeroSection";
+import { posts } from "@/lib/blog-data";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Blog | Owlysis AI Coding Assessments</title>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+
+	<body class="bg-background text-foreground antialiased min-w-[1280px]">
+		<Header />
+		<main>
+			<!-- Hero Section -->
+			<section class="border-b border-border">
+				<div class="grid grid-cols-2 px-20 pt-32 pb-24">
+					<h1 class="text-[88px] leading-[1.05] tracking-[-0.01em] font-normal" style="font-family: 'Instrument Serif', Georgia, serif;">
+						Insights on the<br />
+						<em class="text-blue-600" style="font-style: italic">future of engineering</em><br />
+						assessments
+					</h1>
+					<div class="pl-20 flex flex-col justify-end gap-10 pb-4">
+						<p class="text-[19px] leading-[1.6] text-muted-foreground font-light max-w-[480px]">
+							Explore our latest thoughts on AI, hiring trends, and technical infrastructure.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Blog Grid -->
+			<section class="bg-[#F9F9F7] py-24 border-b border-border">
+				<div class="px-20">
+					<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+						{posts.map((post) => (
+							<div class="bg-white border border-border p-10 flex flex-col gap-8 hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] transition-all group">
+								<div class="flex flex-col gap-4">
+									<div class="flex items-center justify-between">
+										<span class="text-[11px] font-mono text-blue-600 uppercase tracking-widest">{post.category}</span>
+										<span class="text-[11px] font-mono text-muted-foreground uppercase">{post.date}</span>
+									</div>
+									<h2 class="text-[28px] leading-[1.2] font-normal group-hover:text-blue-600 transition-colors" style="font-family: 'Instrument Serif', Georgia, serif;">
+										{post.title}
+									</h2>
+									<p class="text-[15px] leading-[1.6] text-muted-foreground font-light line-clamp-3">
+										{post.description}
+									</p>
+								</div>
+								
+								<div class="mt-auto">
+									<a href={`/blog/${post.slug}`} class="inline-flex items-center gap-2 py-3 px-6 bg-[#0D0D0B] text-white text-[13px] font-medium hover:bg-blue-600 transition-colors">
+										Read More
+										<svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+											<path d="M2 7H12M12 7L8 3M12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		</main>
+		<SiteFooter client:load /> 
+	</body>
+</html>
