@@ -1,44 +1,63 @@
 // src/components/sections/HeroSection.tsx
 // Desktop-first (1920×1200). Place below <Header /> in your Astro page.
 import { useState } from "react"
+import { motion } from "framer-motion"
 
-// HERO SECTION
+const FadeIn = ({ children, delay = 0, y = 30, className = "" }: { children: React.ReactNode, delay?: number, y?: number, className?: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.7, delay, ease: "easeOut" }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+)// HERO SECTION
 export const HeroSection = () => (
-  <section className="border-b border-border">
+  <section className="border-b border-black">
 
     {/* Headline + sub */}
-    <div className="grid grid-cols-2 px-20 pt-20 pb-14 border-b border-border">
-      <h1 className="text-[88px] leading-[1.05] tracking-[-0.02em] font-normal"
-        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-        The last<br />
-        <em className="text-blue-600" style={{ fontStyle: "italic" }}>agent platform</em><br />
-        you'll ever need
-      </h1>
+    <div className="grid grid-cols-2 px-20 pt-20 pb-14 border-b border-black">
+      <FadeIn delay={0}>
+        <h1 className="text-[88px] leading-[1.05] tracking-[-0.02em] font-normal text-black"
+          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          The last<br />
+          <em className="text-blue-600" style={{ fontStyle: "italic" }}>agent platform</em><br />
+          you'll ever need
+        </h1>
+      </FadeIn>
       <div className="pl-20 flex flex-col justify-end gap-8 pb-2">
-        <p className="text-[17px] leading-[1.65] text-muted-foreground font-light max-w-[480px]">
-          Owlysis lets you build, deploy, and monitor AI agents without the overhead.
-          Automate complex workflows, connect your tools, and let your agents run—so
-          your team can focus on what matters.
-        </p>
-        <div className="flex items-center gap-3">
-          <a href="https://app.owlysis.com"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+        <FadeIn delay={0.1}>
+          <p className="text-[17px] leading-[1.65] text-muted-foreground font-light max-w-[480px]">
+            Owlysis lets you build, deploy, and monitor AI agents without the overhead.
+            Automate complex workflows, connect your tools, and let your agents run—so
+            your team can focus on what matters.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.2} className="flex items-center gap-3">
+          <motion.a href="https://app.owlysis.com"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity rounded-full shadow-lg shadow-black/10">
             Get started free
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
-          <a href="/demo"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
+          </motion.a>
+          <motion.a href="/demo"
+            whileHover={{ scale: 1.03, backgroundColor: "rgba(0,0,0,0.03)" }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-black text-sm hover:border-black/50 transition-all rounded-full backdrop-blur-sm shadow-sm backdrop-filter">
             Watch demo
-          </a>
-        </div>
+          </motion.a>
+        </FadeIn>
       </div>
     </div>
 
-    <div className=" p-10 border-2">
+    <div className=" p-10 border-2 border-black bg-white/20 backdrop-blur-md mx-20 my-10 rounded-3xl shadow-2xl shadow-black/5">
       {/* Dashboard visual */}
-      <div className="relative overflow-hidden" style={{ height: 600 }}>
+      <div className="relative overflow-hidden rounded-2xl border border-black" style={{ height: 600 }}>
         <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
         <img
@@ -54,33 +73,39 @@ export const HeroSection = () => (
 // FEATURE SECTION
 
 export const FeatureSection = () => (
-  <section className="border-b border-border">
+  <section className="border-b border-black">
 
     {/* Header row */}
-    <div className="bg-blue-50 p-10 mt-18">
-      <div className="grid grid-cols-2 border-b border-border">
-        <div className="px-20 py-16 border-r border-border flex flex-col gap-6">
-          <div className="w-9 h-9 bg-blue-600 flex items-center justify-center font-mono text-sm font-medium text-white">
-            M
-          </div>
-          <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
-            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-            Making teamwork<br />slightly less painful
-          </h2>
+    <div className="p-10 mt-18">
+      <div className="grid grid-cols-2 border-b border-black">
+        <div className="px-20 py-16 border-r border-black flex flex-col gap-6">
+          <FadeIn delay={0.1}>
+            <div className="w-9 h-9 bg-blue-600 flex items-center justify-center font-mono text-sm font-medium text-white shadow-sm">
+              M
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
+              style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+              Making teamwork<br />slightly less painful
+            </h2>
+          </FadeIn>
         </div>
         <div className="px-20 py-16 flex items-end">
-          <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
-            No more "who edited this?" panic. Just smooth, drama-free workflows that
-            actually help your team get stuff done—for once. Owlysis keeps everyone in
-            sync without the overhead.
-          </p>
+          <FadeIn delay={0.3}>
+            <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
+              No more "who edited this?" panic. Just smooth, drama-free workflows that
+              actually help your team get stuff done—for once. Owlysis keeps everyone in
+              sync without the overhead.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
       {/* Feature visual */}
-      <div className="relative overflow-hidden border-b border-border" style={{ height: 550 }}>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
+      <div className="relative overflow-hidden border-b border-black" style={{ height: 550 }}>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background/50 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background/50 to-transparent" />
         <img
           src="/images/ow-assesment.png"
           alt="Owlysis Assesment"
@@ -98,68 +123,82 @@ export const FeatureSection = () => (
           ["03", "Track Performance & Results",
             "After completing the test, students can view their results, marks, and performance for each assessment. This helps them understand their strengths and improve their coding skills."],
         ].map(([num, title, body], i) => (
-          <div key={num} className={`px-20 py-14 flex flex-col gap-4 ${i < 2 ? "border-r border-border" : ""}`}>
-            <span className="text-[11px] font-mono text-muted-foreground tracking-[0.1em]">{num}</span>
-            <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">{title}</h3>
-            <p className="text-[14px] leading-[1.7] text-muted-foreground font-light">{body}</p>
-          </div>
+          <FadeIn delay={0.1 * i} key={num} className={`px-20 py-14 flex flex-col gap-4 ${i < 2 ? "border-r border-black" : ""}`}>
+            <span className="text-[11px] font-mono text-black/60 tracking-[0.1em]">{num}</span>
+            <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug text-black">{title}</h3>
+            <p className="text-[14px] leading-[1.7] text-black/70 font-light">{body}</p>
+          </FadeIn>
         ))}
       </div>
     </div>
   </section>
 )
 export const FooterCTA = () => (
-  <div className="grid grid-cols-2 px-20 py-24 border-b border-border items-center">
-    <h2 className="text-[68px] leading-[1.08] tracking-[-0.02em] font-normal"
-      style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-      Ready to deploy<br />
-      your <em className="text-blue-600" style={{ fontStyle: "italic" }}>first agent</em>?
-    </h2>
+  <div className="grid grid-cols-2 px-20 py-24 border-b border-black items-center">
+    <FadeIn>
+      <h2 className="text-[68px] leading-[1.08] tracking-[-0.02em] font-normal"
+        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+        Ready to deploy<br />
+        your <em className="text-blue-600" style={{ fontStyle: "italic" }}>first agent</em>?
+      </h2>
+    </FadeIn>
     <div className="pl-20 flex flex-col gap-7">
-      <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[400px]">
-        Start free. No credit card required. Your first agent can be live in under an hour.
-      </p>
-      <div className="flex items-center gap-3">
-        <a href="https://app.owlysis.com"
-          className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-80 transition-opacity">
+      <FadeIn delay={0.1}>
+        <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[400px]">
+          Start free. No credit card required. Your first agent can be live in under an hour.
+        </p>
+      </FadeIn>
+      <FadeIn delay={0.2} className="flex items-center gap-3">
+        <motion.a href="https://app.owlysis.com"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-foreground text-background text-sm font-medium hover:opacity-90 transition-all rounded-full shadow-lg shadow-black/10">
           Start building free
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </a>
-        <a href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-3.5 border border-border text-sm hover:border-foreground transition-colors">
+        </motion.a>
+        <motion.a href="/contact"
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.02)" }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 px-8 py-3.5 border border-black text-sm hover:border-black/50 transition-all rounded-full backdrop-blur-sm">
           Talk to sales
-        </a>
-      </div>
+        </motion.a>
+      </FadeIn>
     </div>
   </div>
 )
 
 export const CalendarSection = () => (
-  <section className="border-b border-border">
+  <section className="border-b border-black">
 
     {/* Header row */}
-    <div className="grid grid-cols-2 border-b border-border">
-      <div className="px-20 py-16 border-r border-border flex flex-col gap-6">
-        <div className="w-9 h-9 bg-foreground flex items-center justify-center font-mono text-sm font-medium text-background">
-          C
-        </div>
-        <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
-          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          Calendar that<br />doesn't flake
-        </h2>
+    <div className="grid grid-cols-2 border-b border-black">
+      <div className="px-20 py-16 border-r border-black flex flex-col gap-6">
+        <FadeIn delay={0.1}>
+          <div className="w-9 h-9 bg-foreground flex items-center justify-center font-mono text-sm font-medium text-background shadow-sm">
+            C
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal max-w-[520px]"
+            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+            Calendar that<br />doesn't flake
+          </h2>
+        </FadeIn>
       </div>
       <div className="px-20 py-16 flex items-end">
-        <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
-          No more "who edited this?" panic. Just smooth, drama-free
-          workflows that actually help your team get stuff done—for once.
-        </p>
+        <FadeIn delay={0.3}>
+          <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[440px]">
+            No more "who edited this?" panic. Just smooth, drama-free
+            workflows that actually help your team get stuff done—for once.
+          </p>
+        </FadeIn>
       </div>
     </div>
 
     {/* Calendar visual */}
-    <div className="relative overflow-hidden border-b border-border" style={{ height: 900, width: 1200 }}>
+    <div className="relative overflow-hidden border-b border-black" style={{ height: 900, width: 1200 }}>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
       <img
@@ -172,27 +211,31 @@ export const CalendarSection = () => (
 )
 
 export const ToolsSection = () => (
-  <section className="border-b border-border">
+  <section className="border-b border-black">
 
     {/* Header row */}
-    <div className="grid grid-cols-2 px-20 pt-16 pb-12 border-b border-border">
-      <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal"
-        style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-        Tools that actually<br />pull their weight
-      </h2>
+    <div className="grid grid-cols-2 px-20 pt-16 pb-12 border-b border-black">
+      <FadeIn>
+        <h2 className="text-[52px] leading-[1.1] tracking-[-0.02em] font-normal"
+          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          Tools that actually<br />pull their weight
+        </h2>
+      </FadeIn>
       <div className="pl-20 flex items-end pb-1">
-        <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[480px]">
-          Ditch the fluff. Get the stuff that helps you move faster, think smarter,
-          and actually get things done.
-        </p>
+        <FadeIn delay={0.1}>
+          <p className="text-[16px] leading-[1.7] text-muted-foreground font-light max-w-[480px]">
+            Ditch the fluff. Get the stuff that helps you move faster, think smarter,
+            and actually get things done.
+          </p>
+        </FadeIn>
       </div>
     </div>
 
     {/* Top two large cards */}
-    <div className="grid grid-cols-2 border-b border-border">
+    <div className="grid grid-cols-2 border-b border-black">
 
       {/* Left card — Question Bank UI replica */}
-      <div className="border-r border-border flex flex-col overflow-hidden">
+      <FadeIn delay={0.2} className="border-r border-black flex flex-col overflow-hidden hover:bg-white/30 transition-colors">
         <div className="px-10 pt-10 pb-6 flex flex-col gap-3">
           <h3 className="text-[22px] font-medium tracking-[-0.02em] leading-snug">
             Data that actually does something
@@ -204,7 +247,7 @@ export const ToolsSection = () => (
         </div>
 
         {/* Question Bank mock UI */}
-        <div className="mx-10 mb-10 border border-[#e5e7eb] rounded-lg overflow-hidden flex flex-col bg-white shadow-sm" style={{ minHeight: 420 }}>
+        <div className="mx-10 mb-10 border border-black rounded-lg overflow-hidden flex flex-col bg-white/50 backdrop-blur-md shadow-2xl shadow-black/10" style={{ minHeight: 420 }}>
 
           {/* Top bar */}
           <div className="h-8 bg-[#111] flex items-center px-4">
@@ -270,13 +313,13 @@ export const ToolsSection = () => (
                 <h4 className="text-[16px] font-semibold text-[#111]">Question Bank</h4>
                 <p className="text-[11px] text-[#888] mt-0.5">Create and manage your coding questions. Add test cases to validate candidate submissions.</p>
                 <div className="flex items-center gap-2 mt-3">
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-[10px] font-medium rounded">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-[10px] font-medium rounded-full shadow-sm hover:opacity-90 transition-opacity">
                     <span>✦</span> Generate from notes
                   </button>
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-[10px] font-medium rounded">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-[10px] font-medium rounded-full shadow-sm hover:opacity-90 transition-opacity">
                     <span>✦</span> Generate one AI
                   </button>
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 border border-[#e5e7eb] text-[10px] text-[#333] rounded">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 border border-black text-[10px] text-[#333] rounded-full hover:bg-black/5 transition-colors">
                     + New Question
                   </button>
                 </div>
@@ -324,10 +367,10 @@ export const ToolsSection = () => (
             </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
 
       {/* Right card — teamwork */}
-      <div className="flex flex-col">
+      <FadeIn delay={0.3} className="flex flex-col hover:bg-white/10 transition-colors">
         <div className="px-10 pt-10 pb-6 flex flex-col gap-3">
           <h3 className="text-[22px] font-medium tracking-[-0.02em] leading-snug text-blue-600">
             Teamwork, minus the chaos
@@ -375,14 +418,14 @@ export const ToolsSection = () => (
             ))}
           </div>
         </div>
-      </div>
+      </FadeIn>
     </div>
 
     {/* Bottom three smaller cards */}
     <div className="grid grid-cols-3">
 
       {/* Card 1 — Files */}
-      <div className="border-r border-border flex flex-col">
+      <FadeIn delay={0.4} className="border-r border-border flex flex-col hover:bg-white/10 transition-colors">
         <div className="px-10 pt-10 pb-6 flex flex-col gap-3">
           <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">
             Your files, your clones
@@ -397,22 +440,22 @@ export const ToolsSection = () => (
             ["Cloned File", "Created 3 days ago", "Clone #1", "/final-final-final.docx"],
             ["Cloned File", "Created 2 minutes ago", "Clone #2", "/final-final-final.docx"],
           ].map(([title, date, clone, path]) => (
-            <div key={clone as string} className="border border-border p-4 flex flex-col gap-1">
+            <div key={clone as string} className="border border-black p-4 flex flex-col gap-1 rounded-2xl bg-white/30 backdrop-blur-sm">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-mono text-muted-foreground border border-border px-1.5 py-0.5">doc</span>
+                <span className="text-[10px] font-mono text-muted-foreground border border-black px-1.5 py-0.5 rounded-md">doc</span>
                 <span className="text-[12px] font-medium">{title}</span>
               </div>
               <span className="text-[11px] text-muted-foreground">{date}</span>
               <span className="text-[11px] text-muted-foreground">{clone}</span>
               <span className="text-[11px] font-mono text-foreground">{path}</span>
-              <span className="text-[11px] text-blue-600 cursor-pointer mt-1">View Clone →</span>
+              <span className="text-[11px] text-blue-600 font-medium cursor-pointer mt-1">View Clone →</span>
             </div>
           ))}
         </div>
-      </div>
+      </FadeIn>
 
       {/* Card 2 — Shortcuts */}
-      <div className="border-r border-border flex flex-col">
+      <FadeIn delay={0.5} className="border-r border-border flex flex-col hover:bg-white/10 transition-colors">
         <div className="px-10 pt-10 pb-6 flex flex-col gap-3">
           <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">
             Shortcuts that don't suck
@@ -424,7 +467,7 @@ export const ToolsSection = () => (
         </div>
         <div className="px-10 pb-10 flex-1">
           {/* Keyboard visual */}
-          <div className="border border-border p-4 flex flex-col gap-1.5 bg-slate-50">
+          <div className="border border-border p-4 flex flex-col gap-1.5 bg-slate-50/50 backdrop-blur-sm">
             {[
               ["esc", "F1", "F2", "F3", "F4", "F5"],
               ["`", "1", "2", "3", "4", "5"],
@@ -446,10 +489,10 @@ export const ToolsSection = () => (
             ))}
           </div>
         </div>
-      </div>
+      </FadeIn>
 
       {/* Card 3 — Integrations */}
-      <div className="flex flex-col">
+      <FadeIn delay={0.6} className="flex flex-col hover:bg-white/10 transition-colors">
         <div className="px-10 pt-10 pb-6 flex flex-col gap-3">
           <h3 className="text-[18px] font-medium tracking-[-0.02em] leading-snug">
             Integrations that don't break
@@ -490,7 +533,7 @@ export const ToolsSection = () => (
             ))}
           </div>
         </div>
-      </div>
+      </FadeIn>
 
     </div>
   </section>
@@ -501,22 +544,21 @@ export const DemoSection = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <section className="relative overflow-hidden border-b border-border" style={{ minHeight: 680 }}>
+    <section className="relative overflow-hidden border-b border-black" style={{ minHeight: 680 }}>
 
-      {/* Pastel gradient background */}
-      <div className="absolute inset-0 z-0" style={{
-        background: "radial-gradient(ellipse at 20% 40%, #d8cff5 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, #b8dff5 0%, transparent 50%), radial-gradient(ellipse at 60% 80%, #f5d0d8 0%, transparent 50%), radial-gradient(ellipse at 90% 70%, #d8f0e8 0%, transparent 45%), #e8f0f5"
-      }} />
+      {/* Pastel gradient background - removed local override to show global */}
 
       {/* Content — vertically centered */}
       <div className="relative z-10 flex flex-col items-center justify-center" style={{ minHeight: 580 }}>
 
         {/* Main text */}
-        <p className="text-center text-[22px] leading-[1.6] text-[#111] max-w-[780px] px-8"
-          style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          Experience Owlysis in action — discover how our platform helps you move faster,
-          work smarter, and stay ahead.
-        </p>
+        <FadeIn>
+          <p className="text-center text-[22px] leading-[1.6] text-[#111] max-w-[780px] px-8"
+            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+            Experience Owlysis in action — discover how our platform helps you move faster,
+            work smarter, and stay ahead.
+          </p>
+        </FadeIn>
 
         {/* Scrolling logos marquee */}
         <div className="mt-14 w-full overflow-hidden">
@@ -552,48 +594,48 @@ export const DemoSection = () => {
           onClick={() => setOpen(false)}
         >
           <div
-            className="bg-white w-full max-w-[560px] p-10 flex flex-col gap-5 relative"
+            className="bg-white/90 backdrop-blur-xl border border-black w-full max-w-[560px] p-10 flex flex-col gap-5 relative rounded-3xl shadow-2xl shadow-black/20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-5 right-5 text-[#aaa] hover:text-[#333] text-xl leading-none"
+              className="absolute top-6 right-6 text-black/40 hover:text-black transition-colors text-xl leading-none"
             >
               ✕
             </button>
 
-            <h2 className="text-[26px] font-normal tracking-[-0.02em]"
+            <h2 className="text-[32px] font-normal tracking-[-0.03em] mb-2"
               style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-              Book a demo with our team
+              Book a demo
             </h2>
 
             <input
               type="text"
               placeholder="Your full name"
-              className="w-full px-4 py-4 bg-[#f5f5f5] text-[14px] text-[#333] placeholder-[#aaa] outline-none border border-transparent focus:border-[#333] transition-colors"
+              className="w-full px-5 py-4 bg-black/5 hover:bg-black/10 text-[14px] text-black placeholder-black/40 outline-none border border-transparent focus:border-black rounded-xl transition-all"
             />
             <input
               type="email"
               placeholder="your@email.com"
-              className="w-full px-4 py-4 bg-[#f5f5f5] text-[14px] text-[#333] placeholder-[#aaa] outline-none border border-transparent focus:border-[#333] transition-colors"
+              className="w-full px-5 py-4 bg-black/5 hover:bg-black/10 text-[14px] text-black placeholder-black/40 outline-none border border-transparent focus:border-black rounded-xl transition-all"
             />
             <input
               type="text"
               placeholder="Company name"
-              className="w-full px-4 py-4 bg-[#f5f5f5] text-[14px] text-[#333] placeholder-[#aaa] outline-none border border-transparent focus:border-[#333] transition-colors"
+              className="w-full px-5 py-4 bg-black/5 hover:bg-black/10 text-[14px] text-black placeholder-black/40 outline-none border border-transparent focus:border-black rounded-xl transition-all"
             />
             <textarea
               placeholder="Anything specific you'd like to cover?"
-              rows={5}
-              className="w-full px-4 py-4 bg-[#f5f5f5] text-[14px] text-[#333] placeholder-[#aaa] outline-none border border-transparent focus:border-[#333] transition-colors resize-y"
+              rows={4}
+              className="w-full px-5 py-4 bg-black/5 hover:bg-black/10 text-[14px] text-black placeholder-black/40 outline-none border border-transparent focus:border-black rounded-xl transition-all resize-none"
             />
 
             <button
-              className="w-full py-4 bg-[#0D0D0B] text-white text-[15px] font-medium hover:opacity-80 transition-opacity"
+              className="w-full py-4 mt-2 bg-black text-white text-[15px] font-medium rounded-full hover:opacity-90 transition-all shadow-lg shadow-black/10"
               onClick={() => setOpen(false)}
             >
-              Book a Demo
+              Schedule Personalized Walkthrough
             </button>
 
             <p className="text-[12px] text-[#aaa]">
@@ -664,13 +706,13 @@ export const SiteFooter = () => {
   ]
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-black bg-white/10 backdrop-blur-sm">
 
       {/* Main 4-col grid */}
       <div className="grid grid-cols-4">
 
         {/* Brand column */}
-        <div className="px-12 py-16 border-r border-border flex flex-col gap-8">
+        <div className="px-12 py-16 border-r border-black flex flex-col gap-8">
 
           {/* Logo + name */}
           <div className="flex items-center gap-3">
@@ -686,12 +728,14 @@ export const SiteFooter = () => {
           </div>
 
           {/* Tagline */}
-          <p className="text-[13px] leading-[1.7] text-muted-foreground font-light max-w-[220px]">
-            The last agent platform you'll ever need. Build, deploy, and monitor AI agents — fast.
-          </p>
+          <FadeIn delay={0.1}>
+            <p className="text-[13px] leading-[1.7] text-muted-foreground font-light max-w-[220px]">
+              The last agent platform you'll ever need. Build, deploy, and monitor AI agents — fast.
+            </p>
+          </FadeIn>
 
           {/* Newsletter */}
-          <div className="flex flex-col gap-2">
+          <FadeIn delay={0.2} className="flex flex-col gap-2">
             <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-[0.1em]">
               Get product updates
             </span>
@@ -699,36 +743,41 @@ export const SiteFooter = () => {
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="w-full px-3 py-2.5 text-[12px] border border-border bg-[#F7F6F2] placeholder-muted-foreground/50 outline-none focus:border-foreground transition-colors"
+                className="w-full px-4 py-3 text-[12px] border border-black bg-white/50 backdrop-blur-sm placeholder-black/40 outline-none focus:bg-white transition-all rounded-xl"
               />
-              <button className="w-full py-2.5 bg-foreground text-background text-[12px] font-medium border border-foreground hover:opacity-80 transition-opacity whitespace-nowrap">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3 bg-black text-white text-[12px] font-medium rounded-full shadow-lg shadow-black/5 hover:opacity-90 transition-all">
                 Subscribe
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Socials */}
-          <div className="flex items-center gap-4">
+          <FadeIn delay={0.3} className="flex items-center gap-4">
             {socials.map(({ label, href, icon }) => (
-              <a
+              <motion.a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                whileHover={{ y: -3, color: "var(--foreground)" }}
+                className="text-muted-foreground transition-colors"
               >
                 {icon}
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </FadeIn>
         </div>
 
         {/* Link columns */}
         {cols.map((col, i) => (
-          <div
+          <FadeIn
+            delay={0.1 * (i + 1)}
             key={col.heading}
-            className={`px-16 py-16 flex flex-col gap-6 ${i < cols.length - 1 ? "border-r border-border" : ""}`}
+            className={`px-16 py-16 flex flex-col gap-6 ${i < cols.length - 1 ? "border-r border-black" : ""}`}
           >
             <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.14em]">
               {col.heading}
@@ -736,35 +785,36 @@ export const SiteFooter = () => {
             <ul className="flex flex-col gap-3">
               {col.links.map((link) => (
                 <li key={link}>
-                  <a
+                  <motion.a
                     href={`/${link.toLowerCase()}`}
-                    className="text-[14px] text-muted-foreground hover:text-foreground transition-colors font-light"
+                    whileHover={{ x: 5, color: "var(--foreground)" }}
+                    className="text-[14px] text-muted-foreground transition-all font-light inline-block"
                   >
                     {link}
-                  </a>
+                  </motion.a>
                 </li>
               ))}
             </ul>
-          </div>
+          </FadeIn>
         ))}
       </div>
 
       {/* Trust badges row */}
-      <div className="px-20 py-5 border-t border-border flex items-center gap-8">
-        {["SOC 2 Type II", "GDPR Compliant", "99.9% Uptime SLA", "End-to-end Encrypted"].map((badge) => (
-          <div key={badge} className="flex items-center gap-2">
+      <div className="px-20 py-5 border-t border-black flex items-center gap-8">
+        {["SOC 2 Type II", "GDPR Compliant", "99.9% Uptime SLA", "End-to-end Encrypted"].map((badge, i) => (
+          <FadeIn delay={0.1 * i} key={badge} className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
-            <span className="text-[11px] font-mono text-muted-foreground">{badge}</span>
-          </div>
+            <span className="text-[11px] font-mono text-black/60">{badge}</span>
+          </FadeIn>
         ))}
       </div>
 
       {/* Bottom bar */}
-      <div className="px-20 py-5 border-t border-border flex items-center justify-between">
-        <span className="text-[12px] font-mono text-muted-foreground">
+      <div className="px-20 py-5 border-t border-black flex items-center justify-between">
+        <span className="text-[12px] font-mono text-black/60">
           © 2025 Owlysis, Inc. All rights reserved.
         </span>
-        <span className="text-[12px] font-mono text-muted-foreground">
+        <span className="text-[12px] font-mono text-black/60">
           Made with ♥ in Pune, India
         </span>
       </div>
