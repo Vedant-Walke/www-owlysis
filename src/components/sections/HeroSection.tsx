@@ -163,7 +163,7 @@ export const CalendarSection = () => (
       <div className="pointer-events-none absolute inset-y-0 left-0 w-28 z-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-28 z-10 bg-gradient-to-l from-background to-transparent" />
       <img
-        src="/images/ow_calender.png"
+        src=""
         alt="Owlysis calendar"
         className="w-full h-full object-cover object-top"
       />
